@@ -12,6 +12,13 @@ const Display = (props) => {
                         <h2>{vehicle.year}</h2>
                         <h1>{vehicle.model}</h1>
                         <img src={vehicle.img}/>
+                        <button onClick={() => {
+                            props.deleteVehicle(vehicle)
+                            }}>Delete Vehicle</button>
+                        <button onClick={() => {
+                            props.selectVehicle(vehicle)
+                            props.history.push('/edit')
+                        }}>Edit</button>
                     </div>
                 </article>
                 </div>
