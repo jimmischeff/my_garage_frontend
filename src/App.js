@@ -80,6 +80,14 @@ function App() {
   return (
     <div className="App">
       <h1>My Garage</h1>
+      <div>
+          <ul id={"nav"}>
+            <Link to="/"><li>Home</li></Link>
+            <Link to="/create"><li>Add Vehicle</li></Link>
+            <li>ODB Codes</li>
+            <li>Contact</li>
+          </ul>
+        </div>
       <Switch>
         <Route exact path='/' render={ (rp) => (
           <Display vehicles = {vehicle} selectVehicle = {selectVehcile}{...rp}

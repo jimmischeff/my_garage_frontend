@@ -48,7 +48,7 @@ const VehicleForm = (props) => {
             value={formData.year} 
             onChange={handleChange}
             />
-            <input type = "submit" value={props.label} />
+            <input type="submit" value={props.label} />
         </form>
     )
 }
