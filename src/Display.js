@@ -1,5 +1,7 @@
 import React from "react"
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button
+import Oil from './Dropdown'
+import Tire from './Tires'
+import { Card, CardImg, CardBody, CardTitle, CardSubtitle, Button, 
   } from 'reactstrap'
 
 const Display = (props) => {
@@ -23,13 +25,9 @@ const Display = (props) => {
                             }}>Edit</Button>
                         </CardBody>
                     </Card>
-                    <div style={{width: "25%"}}>
-                    <ul style={{listStyle: "none"}}><h2>Oil Information</h2>
-                        <li>Filter part#: {vehicle.filterType}</li>
-                        <li>Oil type: {vehicle.oilType}</li>
-                        <li>Engine Capacity: {vehicle.capacity}quarts</li>
-                        <li>Drain Plug size: {vehicle.drainPlug}</li>
-                    </ul>
+                    <div style={{display: "inline-block"}}>
+                        <Oil vehicles={vehicle}/>
+                        <Tire vehicles={vehicle}/>
                     </div>
                     <div style={{width: "25%"}}>
                         <ul><h2>Upgrades</h2></ul>
