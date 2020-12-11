@@ -1,3 +1,7 @@
+##Created back end using Ruby on rails with scaffold commands to generate a table to save vehicle information.  Generated another scaffold to hold data for upgrades and assigning to a vehicle using a one to many relational database.
+
+##React front end using state to display and change information from the backend.  Allows teh user to add vehicles to their garage and save general maintenance information to display in drop down menus.  A separate form to handle the upgrade table, in display that information is sent to a table via a function component and displayed for each vehicle.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
