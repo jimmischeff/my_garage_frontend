@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react'
 import Display from './Display'
 import VehicleForm from "./Form"
+import UpgradeForm from "./UpgradeForm"
 import { Route, Link, Switch } from "react-router-dom"
 
 function App() {
@@ -14,6 +15,10 @@ function App() {
     vehicles: []
   })
 
+  const [upgrade, setUpgrade] = React.useState({
+    upgrades: []
+  })
+
   //Function to get API data from URL
   const getVehicles = () => {
     fetch(url + "/vehicles")
@@ -24,10 +29,20 @@ function App() {
     })
   }
 
+  const getUpgrades = () => {
+    fetch(url + "/upgrades")
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      setUpgrade(data)
+    })
+  }
+
 
   //useEffect to do initial call
   React.useEffect(() => {
     getVehicles()
+    getUpgrades()
   }, [])
 
   const emptyVehicle = {
@@ -38,10 +53,17 @@ function App() {
     img: ""
   }
 
+  const emptyUpgrade = {
+    name: "",
+    price: "",
+    url: "",
+    vehicle_id: 0
+  }
+
   //selected state for edit route
   const [selectedVehicle, setSelectedVehicle] = React.useState(emptyVehicle)
 
-  //function to handle creating new costumes
+  //function to handle creating new vehicles
   const handleCreate = (newVehicle) => {
     fetch(url + "/vehicles", {
       method: "post",
@@ -51,6 +73,19 @@ function App() {
       body: JSON.stringify(newVehicle)
     }).then(response => {
       getVehicles()
+    })
+  }
+
+  //create new upgrade
+  const upgradeCreate = (newUpgrade) => {
+    fetch(url + "/upgrades", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newUpgrade)
+    }).then(response => {
+      getUpgrades()
     })
   }
 
@@ -84,7 +119,7 @@ function App() {
             <Link to="/"><li>Home</li></Link>
             <Link to="/create"><li>Add Vehicle</li></Link>
             <li>ODB Codes</li>
-            <li>Contact</li>
+            <Link to='/upgrade'><li>Upgrades</li></Link>
           </ul>
         </div>
       <Switch>
@@ -98,6 +133,10 @@ function App() {
 
         <Route exact path='/edit' render={(rp) => (
           <VehicleForm {...rp} label='update' vehicle={selectedVehicle} handleSubmit={handleUpdate} />
+        )}/>
+
+        <Route exact path='/upgrade' render={(rp) => (
+          <UpgradeForm {...rp} upgrade={emptyUpgrade} handleSubmit={upgradeCreate} />
         )}/>
       </Switch>
         

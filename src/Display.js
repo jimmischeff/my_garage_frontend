@@ -3,6 +3,7 @@ import Oil from './Dropdown'
 import Tire from './Tires'
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle, Button, 
   } from 'reactstrap'
+import UpgradeTable from "./UpgradeTable"
 
 const Display = (props) => {
     const {vehicles} = props
@@ -30,7 +31,8 @@ const Display = (props) => {
                         <Tire vehicles={vehicle}/>
                     </div>
                     <div style={{width: "25%"}}>
-                        <ul><h2>Upgrades</h2></ul>
+                        <h2>Upgrades</h2>
+                        <UpgradeTable upgrades={vehicle.upgrades}/>
                     </div>
                 </div>
             ))}
