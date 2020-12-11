@@ -7,7 +7,7 @@ import { Route, Link, Switch } from "react-router-dom"
 
 function App() {
 
-  const url = "http://localhost:3000"
+  const url = "https://jsmygarageapp.herokuapp.com/"
   console.log("Current base URL is: ", url)
 
   //state to hold Vehicle API
