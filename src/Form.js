@@ -81,7 +81,7 @@ const VehicleForm = (props) => {
                 <Label>Oil Type:</Label>
                 <Input 
                 type='text' 
-                name="Oil Type" 
+                name="oilType" 
                 value={formData.oilType} 
                 onChange={handleChange}
                 />
@@ -90,14 +90,14 @@ const VehicleForm = (props) => {
                 <Label>Filter Type:</Label>
                 <Input 
                 type='text' 
-                name="Filter Type" 
+                name="filterType" 
                 value={formData.filterType} 
                 onChange={handleChange}
                 />
             </Col>
             <Col md={4}>
                 <Label>Capacity:</Label>
-                <Input type='text' value={formData.capacity} onChange={handleChange}/>
+                <Input type='text' name="capacity" value={formData.capacity} onChange={handleChange}/>
             </Col>
             </Row>
             <Button>Submit</Button>
