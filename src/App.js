@@ -136,7 +136,7 @@ function App() {
         )}/>
 
         <Route exact path='/upgrade' render={(rp) => (
-          <UpgradeForm {...rp} upgrade={emptyUpgrade} handleSubmit={upgradeCreate} />
+          <UpgradeForm {...rp} upgrade={emptyUpgrade} handleSubmit={upgradeCreate} state={upgrade}/>
         )}/>
       </Switch>
         

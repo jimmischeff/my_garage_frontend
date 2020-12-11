@@ -1,5 +1,5 @@
 import React from "react"
-import { Button, Form, FormGroup, Label, Input, FormText, Row, Col } from 'reactstrap'
+import { Button, Form, Label, Input, Col } from 'reactstrap'
 
 const UpgradeForm = (props) => {
 //Form state
