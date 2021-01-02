@@ -11,7 +11,7 @@ const Display = (props) => {
     const loaded = () => (
         <div>
             {vehicles.map((vehicle) => (
-                <div style={{border: "1px solid black", display: "flex"}}>
+                <div style={{border: ".5px solid black", display: "flex"}}>
                     <Card style={{width: "45%"}}>
                         <CardImg top width ="100%" src={vehicle.img}/>
                         <CardBody>
